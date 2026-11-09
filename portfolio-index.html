@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhijeeth Reddy — Professional Portfolio</title>
+<style>
+  :root { --ink:#1a1d21; --muted:#5a6470; --accent:#0b5fff; --card:#f4f6f8; --line:#dde3e8; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); line-height:1.6; }
+  .wrap { max-width:820px; margin:0 auto; padding:40px 20px 64px; }
+  header { border-bottom:3px solid var(--accent); padding-bottom:20px; margin-bottom:28px; }
+  h1 { margin:0 0 6px; font-size:2rem; }
+  .tagline { font-size:1.12rem; color:var(--ink); margin:0 0 8px; }
+  .sub { color:var(--muted); margin:0; }
+  h2 { font-size:1.35rem; margin:36px 0 10px; }
+  h3 { font-size:1.08rem; margin:20px 0 6px; }
+  p { margin:8px 0; }
+  ul { margin:8px 0 8px 20px; padding:0; }
+  li { margin:4px 0; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px 24px; margin-top:14px; }
+  .btn { display:inline-block; margin-top:14px; padding:11px 20px; background:var(--accent); color:#fff;
+         text-decoration:none; border-radius:7px; font-weight:600; }
+  .btn:hover { opacity:.9; }
+  .label { display:inline-block; font-size:.78rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+           color:var(--accent); margin-bottom:4px; }
+  footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Abhijeeth Reddy</h1>
+    <p class="tagline">Computer-science master&rsquo;s and working DCO who builds with AI tools &mdash; and can explain the work, not just produce it.</p>
+    <p class="sub">Professional portfolio &middot; AIML-500 &middot; Audience: technology hiring managers and recruiters</p>
+  </header>
+
+  <h2>About</h2>
+  <p>I work as a data centre technician. I am preparing to be a software developer in AI.</p>
+  <p>Alongside that I am building hands-on fluency with generative AI tools: not just prompting
+  them, but evaluating their output critically and designing products around their behaviour.</p>
+  <p>Interests: ethical hacking and bug bounties, AI-assisted learning.</p>
+
+  <h2>Artifact 1 &mdash; AI Lab Work</h2>
+  <div class="card">
+    <span class="label">Featured project</span>
+    <h3 style="margin-top:2px;">Socratic DSA Study Buddy &mdash; an AI assistant that refuses to hand over solutions</h3>
+
+    <p>A chatbot built to help a student practise coding-interview problems without destroying the
+    learning. Instead of giving the answer, it asks guiding questions and offers hints one rung at a
+    time, following a fixed practice protocol: 20 minutes of solo effort first, then hints, then
+    Socratic questions.</p>
+
+    <h3>The problem</h3>
+    <p>Existing AI assistants hand over full solutions on the first ask. For a student practising
+    problems, that ends the learning the problem was meant to produce &mdash; the answer is seen, but
+    the skill is never built. I designed an assistant whose core feature is a refusal: it will not
+    produce a full solution, full code, or a complete walkthrough, no matter how it is asked.</p>
+
+    <h3>How it was built</h3>
+    <ul>
+      <li><strong>Design thinking:</strong> empathise (my own experience as a DSA student in the practice
+      phase) &rarr; define (&ldquo;How might we help a DSA student practise without the assistant
+      destroying the learning?&rdquo;) &rarr; ideate (six assistant concepts, one chosen) &rarr;
+      prototype &rarr; test &rarr; iterate.</li>
+      <li><strong>Version 1:</strong> a chatbot I wrote by hand in HTML/JavaScript to learn how a
+      rule-based bot works from the inside &mdash; chat interface, message routing, and a hint ladder
+      implemented in code.</li>
+      <li><strong>Version 2 (live product):</strong> the same rules expressed as instructions to a
+      language model on the Mizou platform, so the design applies to any wording of a request and to
+      problems it was not explicitly seeded with.</li>
+    </ul>
+
+    <h3>How it works</h3>
+    <ul>
+      <li>Effort check first: which problem are you on, and have you spent 20 minutes on it alone?</li>
+      <li>Restatement before help: input, exact output, and a brute-force attempt, in the student&rsquo;s own words.</li>
+      <li>Hints one rung at a time: pattern &rarr; state / data structure &rarr; skeleton in words (never code) &rarr; edge cases.</li>
+      <li>When a student is stuck, it asks for the smallest failing input and expected vs. actual &mdash; then asks a question about that failure instead of correcting it.</li>
+      <li>It closes each solved problem by asking the student for a one-sentence pattern note.</li>
+    </ul>
+
+    <h3>Testing</h3>
+    <p>Five test conversations were run against the finished bot: a normal problem session, a user
+    begging for the full solution (refused, with the reason stated), an off-topic question (redirected
+    once, back to the problem), the unreachable-node edge case (raised as questions, never handed over),
+    and a frustrated &ldquo;I&rsquo;m stuck&rdquo; (answered with the smallest-failing-input protocol).
+    All five behaved as designed, and the same rules were verified to generalise to a problem the bot
+    was not seeded with.</p>
+
+    <h3>Skills demonstrated</h3>
+    <p>Prompt and instruction design, comparative evaluation of generative AI tools, iterative product
+    design, and explaining technical work in plain language.</p>
+
+    <a class="btn" href="https://mizou.com/preview-bot?ID=166107" target="_blank" rel="noopener">Try the Socratic DSA Study Buddy</a>
+  </div>
+
+  <h2>Artifact 2 &mdash; Written Analysis</h2>
+  <div class="card">
+    <span class="label">Report &middot; AIML-500 Workshop 2</span>
+    <h3 style="margin-top:2px;">Machine Learning vs. Deep Learning: Two Case Studies</h3>
+
+    <p>Artifact 1 shows building with AI. This artifact shows a different skill: evaluation and
+    technical writing &mdash; choosing between classical machine learning and deep learning for a
+    real problem, and defending the choice.</p>
+
+    <h3>The two cases</h3>
+    <ul>
+      <li><strong>Email spam classification (Gmail) &mdash; classical ML.</strong> The useful signals
+      can be named in advance and shaped into features, one row per message, so models such as logistic
+      regression or tree ensembles fit: cheap to retrain as spammers adapt, and when a message is
+      wrongly flagged an engineer can identify which feature fired.</li>
+      <li><strong>Self-driving perception (Waymo, Tesla) &mdash; deep learning.</strong> The input is
+      raw sensor data and pixels; nobody can hand-write a feature for a pedestrian hidden behind a
+      parked van, in rain, at night. Layered neural networks learn the features themselves, and
+      performance keeps improving as training data grows.</li>
+    </ul>
+
+    <h3>The deciding principle</h3>
+    <p>Where the useful signal lives. If it is present in named, structured features, classical ML is
+    cheaper, faster to retrain and easier to debug. If the signal is raw and the variation is
+    unlimited, deep learning justifies its cost, because it learns representations that hand-made
+    features cannot cover.</p>
+
+    <h3>Skills demonstrated</h3>
+    <p>Comparative evaluation of ML and DL approaches, applying course sources with APA-style
+    citations, and technical writing for a professional audience.</p>
+
+    <a class="btn" href="ml-vs-dl-report.html">Read the full report</a>
+  </div>
+
+  <h2>What&rsquo;s next</h2>
+  <p>More artifacts will be added to this portfolio as the course progresses, including the AI/ML
+  timelines work and a professional self-assessment.</p>
+
+  <footer>
+    Abhijeeth Reddy &middot; Professional Portfolio &middot; Built with GitHub Pages &middot; November 2026
+  </footer>
+
+</div>
+</body>
+</html>
